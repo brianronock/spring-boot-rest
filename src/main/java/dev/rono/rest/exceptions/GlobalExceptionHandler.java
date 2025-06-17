@@ -1,6 +1,8 @@
 package dev.rono.rest.exceptions;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -23,6 +25,23 @@ public class GlobalExceptionHandler {
         // Handle ResourceNotFoundException and return a 404 Not Found response
         Map<String, String> error = new HashMap<>();
         error.put("error", ex.getMessage());
+        return error;
+    }
+
+
+    // ValidationException handler
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleValidationException(MethodArgumentNotValidException ex) {
+        Map<String, String> error = new HashMap<>();
+        // Iterate through the validation errors and add them to the error map
+//        ex.getBindingResult().getFieldErrors().forEach(fieldError -> {
+//            error.put(fieldError.getField(), fieldError.getDefaultMessage());
+//        });
+
+        for(FieldError fieldError : ex.getBindingResult().getFieldErrors()) {
+            error.put(fieldError.getField(), fieldError.getDefaultMessage());
+        }
         return error;
     }
 
