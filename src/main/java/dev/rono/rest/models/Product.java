@@ -7,6 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,14 +27,15 @@ public class Product {
     @NotBlank(message = "Name is Mandatory") // Bean Validation annotation to ensure the name is not blank
     private String name;
 
+    @NotNull(message = "Price must be provided") // Bean Validation annotation to ensure the price is not null
     @Positive(message = "Price must be positive") // Bean Validation annotation to ensure the price is positive
-    private double price;
+    private Double price;
 
     // Constructors, getters, and setters
 //    public Product() { // Implemented by Lombok's @NoArgsConstructor
 //    }
 
-    public Product(String name, double price) {
+    public Product(String name, Double price) {
         this.name = name;
         this.price = price;
     }
