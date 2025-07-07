@@ -103,6 +103,16 @@ Generated automatically via `springdoc-openapi`.
 
 ---
 
+## 🐳 Docker Support
+This project includes a Dockerfile for containerization.
+To build and run the Docker image:
+
+```bash
+docker build -t rest:1.0 .
+docker run -p 8080:8080 rest:1.0
+```
+---
+
 ## 🌿 Branch Navigation
 
 To explore development step-by-step:
@@ -113,6 +123,7 @@ git checkout step-2-core-api
 git checkout step-3-api-tests
 git checkout step-4-integration-tests
 git checkout step-5-api-docs
+git checkout step-6-docker
 ```
 
 ---
@@ -120,7 +131,6 @@ git checkout step-5-api-docs
 ## 💡 Next Steps
 
 Planned next step:  
-➡️ Step 6 – Dockerization
 
 ➡️ Step 7 – Adding Web UI with Thymleaf
 
