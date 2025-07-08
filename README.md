@@ -7,6 +7,8 @@ This is the main branch of the Spring Boot REST API project, combining all devel
 3. 🧪 API Testing (Postman)  
 4. ✅ Integration Testing (100% Coverage)  
 5. 📚 API Documentation (Swagger/OpenAPI)  
+6. 🐳 Docker Support  
+7. 🌿 Web UI with Thymeleaf  
 
 Each development step is preserved in its own dedicated Git branch (`step-1-initial`, `step-2-core-api`, etc.) for learning and incremental development.
 
@@ -21,6 +23,8 @@ Each development step is preserved in its own dedicated Git branch (`step-1-init
 | ✅ Step 3: API Testing   | Postman Collection + Exception Handling    |
 | ✅ Step 4: Integration Tests | Full test suite with 100% coverage    |
 | ✅ Step 5: API Docs      | Swagger UI via SpringDoc OpenAPI          |
+| ✅ Step 6: Docker Support| Containerization with Docker               |
+| ✅ Step 7: Web UI         | Thymeleaf templates for product views      |
 
 ---
 
@@ -124,15 +128,13 @@ git checkout step-3-api-tests
 git checkout step-4-integration-tests
 git checkout step-5-api-docs
 git checkout step-6-docker
+git checkout step-7-thymeleaf
+git checkout step-8-microservices
 ```
 
 ---
 
 ## 💡 Next Steps
-
-Planned next step:  
-
-➡️ Step 7 – Adding Web UI with Thymleaf
 
 ➡️ Step 8 – Microservices with Spring Cloud
 
